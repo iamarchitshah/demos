@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #1f1f1f, #121212);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #00f5d4;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    section:nth-child(even) {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    #hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      }
+      to {
+        text-shadow: 0 0 30px #00f5d4, 0 0 60px #00f5d4;
+      }
+    }
+
+    .scroll-down {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #aaa;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #00f5d4;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 80px;
+      height: 3px;
+      background: #00f5d4;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+
+    p {
+      margin-bottom: 15px;
+      line-height: 1.7;
+      color: #ccc;
+    }
+
+    ul li {
+      margin: 8px 0;
+      color: #ccc;
+    }
+
+    .skill-bar {
+      background: #2a2a2a;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-bar span {
+      display: block;
+      background: linear-gradient(90deg, #00f5d4, #0ff);
+      height: 12px;
+      width: 0;
+      animation: fillSkill 2s forwards;
+    }
+
+    @keyframes fillSkill {
+      100% { width: 90%; }
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    a {
+      color: #00f5d4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="hero">
+    <h1>👋 Hi, I'm Shah Archit</h1>
+    <p>I'm a passionate IT/Tech student building full-stack web apps.</p>
+    <div class="scroll-down">↓ Scroll to explore</div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate and driven <strong>Information Technology student</strong>, currently in my third year of B.Tech, with a growing portfolio that reflects my curiosity, adaptability, and dedication to the ever-evolving tech world. With a strong foundation in <strong>Web Development</strong>, <strong>Data Analytics</strong>, and <strong>Artificial Intelligence</strong>, I strive to merge creativity with technical precision to build impactful digital solutions.</p>
+
+    <h3>🌐 Web Development</h3>
+    <p>I craft responsive and intuitive web applications using <strong>HTML, CSS, JavaScript, PHP</strong>, and <strong>MySQL</strong>, focusing on clean code, usability, and performance optimization. Whether it's a dynamic user interface or a secure backend system, I love transforming ideas into tangible, interactive experiences. My projects prioritize not only function but also form, ensuring each solution is visually appealing and user-friendly.</p>
+
+    <h3>📊 Data Analytics</h3>
+    <p>As an aspiring <strong>Data Analyst</strong>, I specialize in utilizing tools like <strong>Power BI</strong> to clean, model, and visualize data. My dashboards go beyond aesthetics—they provide clarity, uncover trends, and support data-driven decisions. I am actively learning to blend statistical thinking with storytelling to make data meaningful and accessible to all types of users and stakeholders.</p>
+
+    <h3>🤖 Machine Learning & Deep Learning</h3>
+    <p>With a strong interest in artificial intelligence, I explore the application of <strong>Machine Learning</strong> and <strong>Deep Learning</strong> to solve real-world problems such as classification, prediction, and natural language understanding. I'm currently building models using Python libraries such as Scikit-learn, TensorFlow, and Keras, and continuously expanding my knowledge through hands-on projects and research.</p>
+
+    <h3>🎯 My Edge as a Student</h3>
+    <ul>
+      <li>🧠 Blending academic learning with real-world application</li>
+      <li>🚀 Self-motivated explorer of new tools and technologies</li>
+      <li>💡 Interdisciplinary approach to solving challenges</li>
+      <li>🌱 Lifelong learner with a focus on growth and experimentation</li>
+      <li>🤝 Team-oriented and passionate about collaboration</li>
+    </ul>
+
+    <p>My goal is to build intelligent, elegant, and efficient tech solutions that improve lives and add value to organizations. As I continue my academic and professional journey, I am looking for opportunities where I can contribute, learn, and grow—whether it’s through internships, research, freelance work, or team collaborations.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-bar"><span style="width: 90%"></span> HTML/CSS</div>
+    <div class="skill-bar"><span style="width: 80%"></span> JavaScript</div>
+    <div class="skill-bar"><span style="width: 75%"></span> PHP & MySQL</div>
+    <div class="skill-bar"><span style="width: 70%"></span> Power BI</div>
+    <div class="skill-bar"><span style="width: 60%"></span> Python/ML</div>
+
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>All my projects are dynamically loaded from the database. You can add or edit them from the admin dashboard!</p>
+    <div class="project-card" data-aos="fade-up">
+      <h3>E-commerce Website</h3>
+      <p>Built a responsive e-commerce website using HTML, CSS, JS, PHP, and MySQL.</p>
+      <br>
+      <p>A e-commerce website built using PHP, MySQL, HTML, CSS, and JavaScript, providing a complete shopping experience. Features include product browsing, user registration, secure login, wishlist management, cart and order system, and an admin panel to manage products and customer orders. The system is built with extensibility and real-world deployment in mind.
+</p>
+      <a href="readmes.pdf" target="_blank" download>📄 View Project Report</a><br>
+      <a href="http://localhost/final%20project/ecommerce%20website/ecommerce%20website/user_login.php" target="_blank">🌐 View Demo Project</a>
+    </div>
+
+    <div class="project-card" data-aos="fade-up">
+      <h3>Data Analytics Dashboard</h3>
+      <p>Created Power BI dashboard visualizing sales performance and regional trends.</p>
+      <a href="projects/data-dashboard.pdf" target="_blank" download>📄 View Project Report</a>
+    </div>
+  
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email me at: <a href="mailto:your@email.com">architithub@gmail.com</a></p>
+    <p>Contact me : 9664869405
+
+    <p>Want to collaborate? Use the contact form below!</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Shah Archit — Portfolio Project
+  </footer>
+
+</body>
+</html>
